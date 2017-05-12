@@ -6,34 +6,35 @@ local RocketWeapon1Bomber = import('/lua/nomadsweapons.lua').RocketWeapon1Bomber
 INA1003 = Class(NAirUnit) {
     Weapons = {
         Rocket1 = Class(RocketWeapon1Bomber) {
-            OnGotTarget = function(self)
-                local speed = self:GetVelocity()
-                if speed[1]^2+speed[3]^2 > 3 then
-                    NAirUnit.OnGotTarget(self)
+            CreateProjectileForWeapon = function(self, bone)
+                local vx, vy, vz = self.unit:GetVelocity()
+                if vx*vx+ vz*vz > 0.7 then
+                    RocketWeapon1Bomber.CreateProjectileForWeapon(self, bone)
                 end
             end
         },
         Rocket2 = Class(RocketWeapon1Bomber) {
-            OnGotTarget = function(self)
-                local speed = self:GetVelocity()
-                if speed[1]^2+speed[3]^2 > 3 then
-                    NAirUnit.OnGotTarget(self)
+            CreateProjectileForWeapon = function(self, bone)
+                local vx, vy, vz = self.unit:GetVelocity()
+                WARN(vx*vx+ vz*vz)
+                if vx*vx+ vz*vz > 0.7 then
+                    RocketWeapon1Bomber.CreateProjectileForWeapon(self, bone)
                 end
             end
         },
         Rocket3 = Class(RocketWeapon1Bomber) {
-            OnGotTarget = function(self)
-                local speed = self:GetVelocity()
-                if speed[1]^2+speed[3]^2 > 3 then
-                    NAirUnit.OnGotTarget(self)
+            CreateProjectileForWeapon = function(self, bone)
+                local vx, vy, vz = self.unit:GetVelocity()
+                if vx*vx+ vz*vz > 0.7 then
+                    RocketWeapon1Bomber.CreateProjectileForWeapon(self, bone)
                 end
             end
         },
         Rocket4 = Class(RocketWeapon1Bomber) {
-            OnGotTarget = function(self)
-                local speed = self:GetVelocity()
-                if speed[1]^2+speed[3]^2 > 3 then
-                    NAirUnit.OnGotTarget(self)
+            CreateProjectileForWeapon = function(self, bone)
+                local vx, vy, vz = self.unit:GetVelocity()
+                if vx*vx+ vz*vz > 0.7 then
+                    RocketWeapon1Bomber.CreateProjectileForWeapon(self, bone)
                 end
             end
         },
